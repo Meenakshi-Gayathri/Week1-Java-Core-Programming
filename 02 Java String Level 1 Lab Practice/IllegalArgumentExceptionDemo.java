@@ -1,0 +1,23 @@
+import java.util.*;
+
+class IllegalArgumentExceptionDemo {
+
+    public static void createException(String str) {
+        System.out.println(str.substring(5, 2));
+    }
+
+    public static void handleException(String str) {
+        try {
+            System.out.println(str.substring(5, 2));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Caught IllegalArgumentException: " + e.getMessage());
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter a String: ");
+        String str = in.nextLine();
+        handleException(str);
+    }
+}
